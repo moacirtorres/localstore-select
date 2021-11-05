@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Using local storage</title>
+</head>
+<body>
+    <select id="main-select">
+        <option value="A">A</option>
+        <option value="B">B</option>
+        <option value="C">C</option>
+        <option value="D">D</option>
+    </select>
+</body>
+
+<script>
+    
+// Pegando valor...
+
+const mainSelect = document.getElementById('main-select')
+
+
+mainSelect.addEventListener("click", () => {
+        const selected = mainSelect.value
+        localStorage.setItem("option", selected)
+        console.log(localStorage)
+    })
+
+localStorage != null ? mainSelect.value = localStorage.getItem("option") : console.log("Errado")
+
+
+</script>
+</html>
